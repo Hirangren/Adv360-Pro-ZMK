@@ -38,8 +38,8 @@
       //   |--------+------+------+------+------+------+------|       ,-----+-----.  ,-----+-----.        |------+------+------+------+------+------+--------|
       //   |   Esc  |   A  |   O  |   E  |   U  |   I  |      |       |L Ctl|L Alt|  |L Gui|R ctl|        |      |   D  |   H  |   T  |   N  |   S  |   -    |
       //   |--------+------+------+------+------+------+------' .-----+-----+-----|  |-----+-----+-----.  '------+------+------+------+------+------+--------|
-      //   | L Shift|   ;  |   Q  |   J  |   K  |   X  |        |     |     | Home|  |Pg Up|     |Back |         |   B  |   M  |   W  |   V  |   Z  | R Shift|
-      //   |--------+------+------+------+------+------'        |Space|Enter|-----|  |-----| Del |Space|         '------+------+------+------+------+--------|
+      //   | L Shift|   ;  |   Q  |   J  |   K  |   X  |        |Back |     | Home|  |Pg Up|     |     |         |   B  |   M  |   W  |   V  |   Z  | R Shift|
+      //   |--------+------+------+------+------+------'        |Space|Del  |-----|  |-----|Enter|Space|         '------+------+------+------+------+--------|
       //   |  Mod 4 |   `  | CAPS | Left | Right|               |     |     | End |  |Pg Dn|     |     |                |  Up  | Down |   [  |  ]   |        |
       //   `--------+------+------+------+------'               `-----+-----+-----'  `-----+-----+-----'                '------+------+------+------+--------'
 
@@ -53,7 +53,7 @@
         &kp TAB   &kp SQT     &kp COMMA &kp DOT  &kp P      &kp Y  &none                                                                        &none &kp F  &kp G  &kp C     &kp R    &kp L    &kp FSLH
         &kp ESC   &kp A       &kp O     &kp E    &kp U      &kp I  &none           &kp LCTRL &kp LALT &none &none &kp LGUI  &kp RCTRL           &none &kp D  &kp H  &kp T     &kp N    &kp S    &kp MINUS
         &kp LSHFT &kp SEMI    &kp Q     &kp J    &kp K      &kp X         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp B  &kp M  &kp W     &kp V    &kp Z    &kp RSHFT
-        &mo 2     &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &kp SPACE &kp ENTER &kp END              &kp PG_DN &kp DEL &kp BSPC              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &mo 2     &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &kp BSPC &kp DEL &kp END              &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
 
