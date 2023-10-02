@@ -62,16 +62,8 @@
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
       };
-
-      bspdl: bspc_del {
-        compatible = "zmk,behavior-mod-morph";
-        label = "BSPC_DEL";
-        #binding-cells = <0>;
-        bindings = <&kp BACKSPACE>, <&kp DELETE>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-      };
     };
-    
+
     #define U_SFT &hm_l LSHIFT U
     #define H_SFT &hm_r RSHIFT H
     #define E_CTL &hm_l LCTRL E
@@ -105,6 +97,7 @@
       //   |  Mod 4 |   `  | CAPS | Left | Right|               |     |     | End |  |Pg Dn|     |     |                |  Up  | Down |   [  |  ]   |        |
       //   `--------+------+------+------+------'               `-----+-----+-----'  `-----+-----+-----'                '------+------+------+------+--------'
 
+
   keymap {
     compatible = "zmk,keymap";
 
@@ -114,7 +107,7 @@
         &kp TAB   &kp SQT     &kp COMMA &kp DOT  &kp P      &kp Y  &none                                                                  &none   &kp F   &kp G  &kp C    &kp R    &kp L    &kp FSLH
         &kp ESC   A_GUI       O_ALT     E_CTL    U_SFT      &kp I  &none           &kp LCTRL  &kp LALT    &kp LGUI  &kp RCTRL             &none   &kp D   H_SFT  T_CTL    N_ALT    S_GUI    &kp MINUS
         &kp LSHFT &kp SEMI    &kp Q     &kp J    &kp K      &kp X                             &kp HOME    &kp PG_UP                               &kp B   &kp M  &kp W    &kp V    &kp Z    &kp RSHFT
-        &mo FN    &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &bspdl   &kp ESC    &kp END     &kp PG_DN &kp ENTER &kp SPACE                   &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
+        &mo FN    &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &kp BSPC &kp DEL    &kp END     &kp PG_DN &kp ENTER &kp SPACE                   &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
       >;
     };
     qwerty_layer {
