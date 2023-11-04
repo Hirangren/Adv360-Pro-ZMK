@@ -82,7 +82,7 @@
         mods = <(MOD_LSFT|MOD_RSFT)>;
       };
     };
-    
+
     #define U_SFT &hm_l LSHIFT U
     #define H_SFT &hm_r RSHIFT H
     #define E_CTL &hm_l LCTRL E
