@@ -4,11 +4,15 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
-#define DV 0
-#define QW 1
-#define KP 2
-#define FN 3
-#define MOD 4
+#define DF 0
+#define DV 1
+#define CO 2
+#define QW 3
+#define ESDF 4
+#define KP 5
+#define FN 6
+#define MOD 7
+
 #define KEYS_LEFT 0 1 2 3 4 5 6 \
                   14 15 16 17 18 19 20 \
                   28 29 30 31 32 33 34 \
@@ -70,6 +74,13 @@
         bindings = <&kp BACKSPACE>, <&kp DELETE>;
         mods = <(MOD_LSFT|MOD_RSFT)>;
       };
+      sptab: space_tab {
+        compatible = "zmk,behavior-mod-morph";
+        label = "SPACE_TAB";
+        #binding-cells = <0>;
+        bindings = <&kp SPACE>, <&kp TAB>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
     };
     
     #define U_SFT &hm_l LSHIFT U
@@ -114,16 +125,43 @@
         &kp TAB   &kp SQT     &kp COMMA &kp DOT  &kp P      &kp Y  &none                                                                  &none   &kp F   &kp G  &kp C    &kp R    &kp L    &kp FSLH
         &kp ESC   A_GUI       O_ALT     E_CTL    U_SFT      &kp I  &none           &kp LCTRL  &kp LALT    &kp LGUI  &kp RCTRL             &none   &kp D   H_SFT  T_CTL    N_ALT    S_GUI    &kp MINUS
         &kp LSHFT &kp SEMI    &kp Q     &kp J    &kp K      &kp X                             &kp HOME    &kp PG_UP                               &kp B   &kp M  &kp W    &kp V    &kp Z    &kp RSHFT
-        &mo FN    &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &bspdl   &kp ESC    &kp END     &kp PG_DN &kp ENTER &kp SPACE                   &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
+        &mo FN    &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &bspdl   &kp ESC    &kp END     &kp PG_DN &kp ENTER &sptab                      &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
       >;
+    };
+    dvorak_layer {
+      bindings = <
+        &trans  &trans      &trans    &trans   &trans     &trans &trans                                                 &trans &trans  &trans &trans    &trans    &trans    &kp BSLH
+        &trans  &kp SQT     &kp COMMA &kp DOT  &kp P      &kp Y  &trans                                                 &trans &kp F   &kp G  &kp C     &kp R     &kp L     &kp FSLH
+        &trans  &kp A       &kp O     &kp E    &kp U      &kp I  &trans         &trans  &trans  &trans  &trans          &trans &kp D   &kp H  &kp T     &kp N     &kp S     &kp MINUS
+        &trans  &kp SEMI    &kp Q     &kp J    &kp K      &kp X                         &trans  &trans                         &kp B   &kp M  &kp W     &kp V     &kp Z     &trans
+        &trans  &trans      &trans    &trans   &trans                   &trans  &trans  &trans  &trans  &trans  &trans                 &trans &trans    &trans    &trans    &trans
+      >;
+    };
+    colemak_layer {
+      bindings = <
+        &trans  &trans  &trans  &trans  &trans  &trans &trans                                               &trans  &trans  &trans  &trans    &trans      &trans        &kp MINUS 
+        &trans  &kp Q   &kp W   &kp F   &kp P   &kp G  &trans                                               &trans  &kp J   &kp L   &kp U     &kp Y       &kp SEMICOLON &kp BSLH
+        &trans  &kp A   &kp R   &kp S   &kp T   &kp D  &trans         &trans  &trans  &trans  &trans        &trans  &kp H   &kp N   &kp E     &kp I       &kp O         &kp SQT
+        &trans  &kp Z   &kp X   &kp C   &kp V   &kp B                         &trans  &trans                        &kp K   &kp M   &kp COMMA &kp PERIOD  &kp SLASH     &trans
+        &trans  &trans  &trans  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans                &trans  &trans    &trans      &trans        &trans
+            >;
     };
     qwerty_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog KP                                                           &mo MOD &kp N6  &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                             &none   &kp Y   &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL            &none   &kp H   &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                              &kp N   &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo FN     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL  &kp END  &kp PG_DN &kp ENTER &kp SPACE                  &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo FN
+        &trans  &trans  &trans    &trans    &trans     &trans &trans                                                  &trans  &trans  &trans &trans    &trans   &trans   &kp MINUS
+        &trans  &kp Q   &kp W     &kp E     &kp R      &kp T  &trans                                                  &trans  &kp Y   &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &trans  &kp A   &kp S     &kp D     &kp F      &kp G  &trans          &trans  &trans  &trans  &trans          &trans  &kp H   &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &trans  &kp Z   &kp X     &kp C     &kp V      &kp B                          &trans  &trans                          &kp N   &kp M  &kp COMMA &kp DOT  &kp FSLH &trans
+        &trans  &trans  &trans    &trans    &trans                    &trans  &trans  &trans  &trans  &trans  &trans                  &trans &trans    &trans   &trans   &trans
+      >;
+    };
+    esdf_layer {
+      bindings = <
+        &trans  &trans  &trans    &trans    &trans     &trans &trans                                                      &trans  &trans  &trans &trans    &trans   &trans   &kp MINUS
+        &trans  &kp I   &kp Q   &kp W     &kp E     &kp R      &kp T                                                      &trans  &kp Y   &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &trans  &kp O   &kp A   &kp S     &kp D     &kp F      &kp G              &trans  &trans  &trans  &trans          &trans  &kp H   &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &trans  &kp B   &kp Z   &kp X     &kp C     &kp V                                 &trans  &trans                          &kp N   &kp M  &kp COMMA &kp DOT  &kp FSLH &trans
+        &trans  &trans  &trans    &trans    &trans                    &kp SPACE &kp ENTER &trans  &trans  &kp DELETE  &kp BACKSPACE       &trans &trans    &trans   &trans   &trans
       >;
     };
     keypad {
@@ -147,9 +185,9 @@
     mod {
       bindings = <
         &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                                                  &trans                   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
-        &none &to QW       &none        &none        &none        &none        &bootloader                                                                                            &bootloader             &none         &none        &none        &none        &none        &none
-        &none &none        &none        &to DV       &none        &none        &rgb_ug RGB_MEFS_CMD 5                 &bt BT_CLR  &bt BT_CLR  &bt BT_CLR &bt BT_CLR                   &rgb_ug RGB_MEFS_CMD 5  &none         &none        &none        &none        &none        &none
-        &none &none        &none        &none        &none        &none                                                           &none       &none                                                           &none         &none        &none        &none        &none        &none
+        &none &to QW       &none        &to ESDF     &none        &none        &bootloader                                                                                            &bootloader             &none         &none        &none        &none        &none        &none
+        &none &none        &none        &to DV       &to DF       &none        &rgb_ug RGB_MEFS_CMD 5                 &bt BT_CLR  &bt BT_CLR  &bt BT_CLR &bt BT_CLR                   &rgb_ug RGB_MEFS_CMD 5  &none         &none        &none        &none        &none        &none
+        &none &none        &none        &to CO       &none        &none                                                           &none       &none                                                           &none         &none        &none        &none        &none        &none
         &none &none        &none        &bl BL_INC   &bl BL_DEC                                       &rgb_ug RGB_TOG &bl BL_TOG  &none       &none      &bl BL_TOG &rgb_ug RGB_TOG                                         &bl BL_INC   &bl BL_DEC   &none        &none        &none
       >;
     };
