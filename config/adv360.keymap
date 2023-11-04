@@ -127,11 +127,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1      &kp N2    &kp N3   &kp N4     &kp N5 &tog KP                                                                &mo MOD &kp N6  &kp N7 &kp N8   &kp N9   &kp N0   &kp BSLH
-        &kp TAB   &kp SQT     &kp COMMA &kp DOT  &kp P      &kp Y  &HOME                                                                  &PG_UP  &kp F   &kp G  &kp C    &kp R    &kp L    &kp FSLH
-        &kp ESC   A_GUI       O_ALT     E_CTL    U_SFT      &kp I  &END            &kp LCTRL  &kp LALT    &kp LGUI  &kp RCTRL             &PG_DN  &kp D   H_SFT  T_CTL    N_ALT    S_GUI    &kp MINUS
-        &kp LSHFT &kp SEMI    &kp Q     &kp J    &kp K      &kp X                             &kp INT3    &kp INT2                               &kp B   &kp M  &kp W    &kp V    &kp Z    &kp RSHFT
-        &mo FN    &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &bspdl   &kp ESC    &kp INT5    &kp INT4 &kp ENTER &sptab                      &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
+        &kp EQUAL &kp N1      &kp N2    &kp N3   &kp N4     &kp N5 &tog KP                                                               &mo MOD    &kp N6  &kp N7 &kp N8   &kp N9   &kp N0   &kp BSLH
+        &kp TAB   &kp SQT     &kp COMMA &kp DOT  &kp P      &kp Y  &kp HOME                                                              &kp PG_UP  &kp F   &kp G  &kp C    &kp R    &kp L    &kp FSLH
+        &kp ESC   A_GUI       O_ALT     E_CTL    U_SFT      &kp I  &kp END         &kp LCTRL  &kp LALT    &kp LGUI &kp RCTRL             &kp G_DN   &kp D   H_SFT  T_CTL    N_ALT    S_GUI    &kp MINUS
+        &kp LSHFT &kp SEMI    &kp Q     &kp J    &kp K      &kp X                             &kp INT3    &kp INT2                                  &kp B   &kp M  &kp W    &kp V    &kp Z    &kp RSHFT
+        &mo FN    &kp GRAVE   &kp CAPS  &kp LEFT &kp RIGHT                &bspdl   &kp ESC    &kp INT5    &kp INT4 &kp ENTER &sptab                         &kp UP &kp DOWN &kp LBKT &kp RBKT &mo FN
       >;
     };
     dvorak_layer {
