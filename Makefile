@@ -12,13 +12,13 @@ endif
 .PHONY: all clean
 
 all:
-	$(DOCKER) build --tag zmk --file Dockerfile .
-	$(DOCKER) run --rm -it --name zmk \
+	'$(DOCKER)' build --tag zmk --file Dockerfile .
+	'$(DOCKER)' run --rm -it --name zmk \
 		-v $(PWD)/firmware:/app/firmware$(SELINUX1) \
 		-v $(PWD)/config:/app/config:ro$(SELINUX2) \
 		-e TIMESTAMP=$(TIMESTAMP) \
 		zmk
+		cp firmware/*.uf2 /mnt/d/
 
 clean:
 	rm -f firmware/*.uf2
-	$(DOCKER) image rm zmk docker.io/zmkfirmware/zmk-build-arm:stable
